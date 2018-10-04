@@ -88,12 +88,12 @@ class TimerAction(Action):
         """Return a description of this TimerAction."""
         return 'TimerAction(period={}, actions=<actions>)'.format(self.__period)
 
-    def describe_conditional_sub_entities(self) -> List[Tuple[
-        Text,
-        Iterable['LaunchDescriptionEntity'],
-    ]]:
-        """Return the actions that will result when the timer expires, but was not canceled."""
-        return [('{} seconds pass without being canceled'.format(self.__period), self.__actions)]
+    # def describe_conditional_sub_entities(self) -> List[Tuple[
+    #     Text,
+    #     Iterable['LaunchDescriptionEntity'],
+    # ]]:
+    #     """Return the actions that will result when the timer expires, but was not canceled."""
+    #     return [('{} seconds pass without being canceled'.format(self.__period), self.__actions)]
 
     def handle(self, context: LaunchContext) -> Optional[SomeActionsType]:
         """Handle firing of timer."""
